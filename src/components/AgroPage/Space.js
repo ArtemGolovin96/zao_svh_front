@@ -43,7 +43,7 @@ class Space extends Component {
 
   getSpacesSorts = () => {
     axios
-      .get("http://localhost:7778/agro/sorts")
+      .get("https://klubnikolov-api.herokuapp.com/agro/sorts")
       .then((response) => {
         const arr = [...response.data];
         this.setState({ arrOfAllSorts: arr });
@@ -56,7 +56,7 @@ class Space extends Component {
 
   getSpaces = () => {
     axios
-      .get("http://localhost:7778/agro")
+      .get("https://klubnikolov-api.herokuapp.com/agro")
       .then((response) => {
         const arr = [...response.data];
         this.setState({ arrOfSpacesFromBack: arr });

@@ -21,7 +21,7 @@ class SuperUser extends Component {
       headers: {"Content-Type": "application/json; charset=utf-8"},
       data: data
     }
-    axios.post("http://localhost:7778/admin", axiosOptions)
+    axios.post("https://klubnikolov-api.herokuapp.com//admin", axiosOptions)
     .then((res) => {
       console.log(res)
     })
@@ -33,7 +33,7 @@ class SuperUser extends Component {
       headers: {"Content-Type": "application/json; charset=utf-8"},
       data: data
     }
-    axios.post("http://localhost:7778/admin", axiosOptions)
+    axios.post("https://klubnikolov-api.herokuapp.com//admin", axiosOptions)
     .then((res) => {
       console.log(res)
     })

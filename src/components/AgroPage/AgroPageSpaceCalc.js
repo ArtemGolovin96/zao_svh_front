@@ -30,7 +30,7 @@ class AgroPageSpaceCalc extends Component {
   propsFiles = {
     name: "file",
     multiple: true,
-    action: "http://localhost:7778/agro-calc",
+    action: "https://klubnikolov-api.herokuapp.com/agro-calc",
     info: '',
     onChange: (info) => {
       const { status } = info.file;
@@ -70,7 +70,7 @@ class AgroPageSpaceCalc extends Component {
 
   getSpacesSorts = () => {
     axios
-      .get("http://localhost:7778/agro-calc")
+      .get("https://klubnikolov-api.herokuapp.com/agro-calc")
       .then((response) => {
         const arr = [...response.data];
         setTimeout(() => {
@@ -140,7 +140,7 @@ class AgroPageSpaceCalc extends Component {
       method: 'POST',
       headers: {'content-type': 'application/json' },
       data: JSON.stringify(obj),
-      url: 'http://localhost:7778/agro-calc-obj',
+      url: 'https://klubnikolov-api.herokuapp.com/agro-calc-obj',
     }
     axios(option).then((res) => console.log(res))
   }

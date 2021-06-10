@@ -32,7 +32,7 @@ class LoginPage extends Component {
       headers: {"Content-Type": "application/json; charset=utf-8"},
       data: data
     }
-    axios.post("http://localhost:7778/", axiosOptions)
+    axios.post("https://klubnikolov-api.herokuapp.com/", axiosOptions)
     .then((res) => {
       console.log(res)
       return res;
