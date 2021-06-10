@@ -12,10 +12,9 @@ class VisualSpaceOpened extends Component {
     rowsArrayState: [],
     columnsArrayState: [],
     sortsOnSector: [],
-
   };
-  createdRows = () => {
-    if (this.props.arg) {
+  getCachedState() {
+    if (this.state.columnsArrayState.length === 0 && this.props.arg) {
       console.log(this.props.arg)
       const sortsArr = this.props.arg.sortsOnSquare;
       const rows = this.props.arg.volumeRowsOnSquare;
@@ -30,21 +29,23 @@ class VisualSpaceOpened extends Component {
       this.setState({ columnsArrayState: columnsArray });
       this.setState({ sortsOnSector: sortsArr });
     }
-  };
-
-  componentDidMount() {
-    this.createdRows();
+    return {
+      rowsArrayState: this.state.rowsArrayState,
+      columnsArrayState: this.state.columnsArrayState,
+      sortsOnSector: this.state.sortsOnSector
+    }
   }
 
   render() {
+    const currentState = this.getCachedState();
     return (
       <div className="gen-space">
         <Divider></Divider>
         {
-            this.state.rowsArrayState.map((el, inR) => {
+            currentState.rowsArrayState.map((el, inR) => {
               return (
                 <Row className="row" id={inR + 1} key={inR + 1}>
-                  {this.state.columnsArrayState.map((item, inC) => {
+                  {currentState.columnsArrayState.map((item, inC) => {
                     return (
                       <Col className="col" id={inC + 1} key={inC + 1}>
                         {

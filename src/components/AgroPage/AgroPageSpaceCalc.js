@@ -128,8 +128,11 @@ class AgroPageSpaceCalc extends Component {
       sortsOnSquare: this.props.sortsOnSquare,
       volumeRowsOnSquare: this.props.volumeRowsOnSquare.length,
       volumeColumnsOnSquare: this.props.volumeColumnsOnSquare.length,
-      fileId: this.state.response 
+      fileId: this.state.response,
+      shirota: formData.get('shirota'),
+      dolgota: formData.get('dolgota'),
     }
+
     
     this.axiosPOSTfinalDataObj(finalObjDataplusRedux)
 
@@ -145,6 +148,9 @@ class AgroPageSpaceCalc extends Component {
     axios(option).then((res) => console.log(res))
   }
   
+  getCoordinate = () => {
+
+  }
 
   render() {
     return (
@@ -178,6 +184,19 @@ class AgroPageSpaceCalc extends Component {
                 placeholder="общая S в гектарах"
                 name="area-all"
                 type="number"
+              ></input>
+              </div>
+              <div className="coordinate-container-input">
+              <p className="input-name">Введите координаты вашего поля</p>
+              <input
+                className="coordinate-1-input-name"
+                placeholder="Широта"
+                name="shirota"
+              ></input>
+              <input
+                className="coordinate-2-input-name"
+                placeholder="Долгота"
+                name="dolgota"
               ></input>
               </div>
               <div className="select-container">

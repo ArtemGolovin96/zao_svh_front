@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import compassImg from './compass.svg'
 import "./AgroPage.css";
 import store from "../../redux/store";
 import { connect } from "react-redux";
@@ -60,7 +61,7 @@ class Space extends Component {
       .then((response) => {
         const arr = [...response.data];
         this.setState({ arrOfSpacesFromBack: arr });
-        console.log(arr)
+        console.log(arr, '------')
       })
       .catch(function (error) {
         alert("Ошибка загрузки страницы. Обратитесь к администратору");
@@ -147,7 +148,7 @@ class Space extends Component {
             </p>
             <p className="name-brigade">
               {" "}
-              {/* Бригада № {console.log(this.state.clickedSpaceOpened)} */}
+              Бригада № {this.state.clickedSpaceOpened.spaceBrigade}
             </p>
           </div>
           <div className="container-space-information">
@@ -191,6 +192,7 @@ class Space extends Component {
           </div>
           <div className="container-space-opened-visual">
             <div className="visual-space">
+              <img className="compass" src={compassImg}></img>
               <VisualSpaceOpened arg={this.state.clickedSpaceOpened} />
             </div>
             <div className="visual-space-information">
@@ -208,8 +210,9 @@ class Space extends Component {
                   {this.state.showMap? 
                   <YMaps >
                     <Map
+                    instanceRef    
                       defaultState={{
-                        center: [55.75, 37.57],
+                        center: [55.57, 37.71],
                         zoom: 10,
                         type: this.state.typeOfMap,
                       }}
@@ -224,7 +227,7 @@ class Space extends Component {
                       <GeoObject
                         geometry={{
                           type: "Point",
-                          coordinates: [55.8, 37.8],
+                          coordinates: [55.57836893130973, 37.719111442565925],
                         }}
                         properties={{
                           iconContent: "Я тащусь",

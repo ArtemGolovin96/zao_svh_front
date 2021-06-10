@@ -32,6 +32,33 @@
     padding: 10px;
 }
 
+.coordinate-1-input-name {
+    width: 292px;
+    margin: 0px auto 10px 5px;
+    height: 50px;
+    border-radius: 20px;
+    border: 1px solid #d53032;
+    font-weight: 700;
+    background-color: whitesmoke;
+    outline: 0;
+    outline-offset: 0;
+    padding: 10px;
+}
+
+
+.coordinate-2-input-name {
+    width: 292px;
+    margin: 0px auto 10px 5px;
+    height: 50px;
+    border-radius: 20px;
+    border: 1px solid #d53032;
+    font-weight: 700;
+    background-color: whitesmoke;
+    outline: 0;
+    outline-offset: 0;
+    padding: 10px;
+}
+
 .input-int-columns {
     width: 292px;
     margin: 0px auto 10px 5px;
@@ -332,5 +359,12 @@ padding-left: 0%;
 .dragger {
     width: 100px;
     border-radius: 20px;
+}
+
+.compass {
+    width: 130px;
+    height: 100px;
+    position: absolute;
+    margin: 20px 0px 0px -310px;
 }
 

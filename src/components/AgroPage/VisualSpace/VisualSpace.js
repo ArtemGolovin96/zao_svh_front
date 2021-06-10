@@ -40,7 +40,7 @@ class VisualSpace extends Component {
     return (
       <div className="gen-space">
         {console.log(this.props.arg)}
-        <Divider></Divider>
+        <Divider>Север</Divider>
         {this.props.volumeRowsOnSquare
           ?  this.props.volumeRowsOnSquare.map((el, inR) => {
               console.log(el);
@@ -75,7 +75,9 @@ class VisualSpace extends Component {
             : null
            
           }
+          <Divider>Юг</Divider>
       </div>
+      
     );
   }
 }
