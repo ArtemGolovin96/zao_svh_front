@@ -1,0 +1,14 @@
+ .gen-space {
+     margin: 30px;
+ }
+
+
+.col {
+    background-color: whitesmoke;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+    color: black;
+}
+

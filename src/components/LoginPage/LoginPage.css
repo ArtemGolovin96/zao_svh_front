@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+
+body{
+    /* background-image: url(https://w-dog.ru/wallpapers/9/1/441943541608703/pole-rozh-koleya-gorizont-derevya-tuchi-zakat.jpg); */
+    background-image: url("./DSC_0883з\ \(1\).png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.header-login-page {
+    /* background-image: url(./img_login/IMG_0390.jpg); */
+    height: 0px;
+}
+
+.footer {
+    /* background-image: url(./img_login/IMG_0390.jpg); */
+    height: 120px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    font-size: 10px;
+}
+
+.img-logo-login-page {
+    margin: -100px auto 1px auto;
+    height: 500px;
+}
+
+.login-form {
+    margin: auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center ;
+}
+
+.input-password-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.pokazatbutton {
+    background: none;
+    border: none;
+    margin: 0px 10px 10px 10px;
+}
+
+.pokazatbutton:hover {
+    background: white;
+    border: none;
+    border-radius: 20px;
+    margin: 0px 10px 10px 10px;
+}
+
+.login-input {
+    width: 292px;
+    margin: 0px auto 10px auto;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: whitesmoke;
+    outline: 0;
+    outline-offset: 0;
+    padding: 10px;
+}
+
+
+.password-input {
+    width: 292px;
+    margin: 0px auto 10px 5px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: whitesmoke;
+    outline: 0;
+    outline-offset: 0;
+    padding: 10px;
+}
+
+.login-button {
+    background-color:#d53032;
+    color: #ffd700;
+    border-radius: 20px;
+    border: none;
+    width: 292px;
+    margin: auto 0px auto 4px;
+    height: 50px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+  }
+  
