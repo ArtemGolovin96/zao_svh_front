@@ -280,9 +280,7 @@ class AgroPageSpaceCalc extends Component {
                 </Dragger>
               </div>
             </div>
-            <Link to="/agro">
             <button className="save-space-button" type="submit">Сохранить поле</button>
-            </Link>
           </form>
         </div>
       </main>
