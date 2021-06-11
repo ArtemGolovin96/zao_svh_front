@@ -14,8 +14,8 @@ class VisualSpaceOpened extends Component {
     sortsOnSector: [],
   };
   getCachedState() {
+    console.log(this.props.arg)
     if (this.state.columnsArrayState.length === 0 && this.props.arg) {
-      console.log(this.props.arg)
       const sortsArr = this.props.arg.sortsOnSquare;
       const rows = this.props.arg.volumeRowsOnSquare;
       const columns = this.props.arg.volumeColumnsOnSquare;
@@ -28,7 +28,7 @@ class VisualSpaceOpened extends Component {
       this.setState({ rowsArrayState: rowsArray });
       this.setState({ columnsArrayState: columnsArray });
       this.setState({ sortsOnSector: sortsArr });
-    }
+    } 
     return {
       rowsArrayState: this.state.rowsArrayState,
       columnsArrayState: this.state.columnsArrayState,
@@ -36,8 +36,19 @@ class VisualSpaceOpened extends Component {
     }
   }
 
+  reset = () => {
+    this.setState({ columnsArrayState: []});
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.arg.spaceName !== this.props.arg.spaceName) {
+      this.reset()
+    }
+  }
+
   render() {
     const currentState = this.getCachedState();
+    console.log(currentState)
     return (
       <div className="gen-space">
         <Divider></Divider>
@@ -50,7 +61,6 @@ class VisualSpaceOpened extends Component {
                       <Col className="col" id={inC + 1} key={inC + 1}>
                         {
                         this.props.arg.sortsOnSquare.map((it) => {
-                        console.log(it, '------------------------------------')
                         if (it.sector === inR + 1 + "." + (inC + 1)) {
                           return (
                             it.name +

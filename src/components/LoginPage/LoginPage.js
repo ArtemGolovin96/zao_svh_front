@@ -81,7 +81,7 @@ class LoginPage extends Component {
             name="login"
             maxLength="55"
             size="40"
-            placeholder="Ваш пароль"
+            placeholder="Ваш логин"
             onChange={(e) => this.props.loginInputFromLoginPageActionProps(e)}
           ></input>
           <div className="input-password-container">
