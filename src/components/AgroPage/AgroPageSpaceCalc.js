@@ -13,6 +13,7 @@ import {
 } from "../../redux/action";
 import { Upload, message } from "antd";
 import { InboxOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const { Dragger } = Upload;
 
@@ -279,7 +280,9 @@ class AgroPageSpaceCalc extends Component {
                 </Dragger>
               </div>
             </div>
+            <Link to="/agro">
             <button className="save-space-button" type="submit">Сохранить поле</button>
+            </Link>
           </form>
         </div>
       </main>
