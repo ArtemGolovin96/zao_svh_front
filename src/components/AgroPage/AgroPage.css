@@ -172,7 +172,7 @@
 
 .space-opened {
     width: 1000px;
-    height: 700px;
+    height: auto;
     background-color: whitesmoke;
     margin: auto;
     border: 1px solid #d53032;
@@ -365,6 +365,10 @@ padding-left: 0%;
     width: 130px;
     height: 100px;
     position: absolute;
-    margin: 20px 0px 0px -310px;
+    margin: -13px 0px 0px 260px;
 }
 
+
+.cord-a {
+    margin: 0px 0px 0px -50px;
+}

@@ -188,6 +188,7 @@ class AgroPageSpaceCalc extends Component {
               </div>
               <div className="coordinate-container-input">
               <p className="input-name">Введите координаты вашего поля</p>
+              <a target="_blank" className="cord-a" href="https://www.mapsdirections.info/ru/GPS-%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D1%8B-Google-%D0%9A%D0%B0%D1%80%D1%82%D0%B0%D1%85.html">Узнать координаты</a>
               <input
                 className="coordinate-1-input-name"
                 placeholder="Широта"

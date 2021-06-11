@@ -26,6 +26,8 @@ class Space extends Component {
     showMap: false,
     buttonOnMapType: "Гибрид",
     typeOfMap: "yandex#publicMapHybrid",
+    shirota: 55.57836893130973,
+    dolgota: 37.719111442565925,
   };
 
   onClickSpaceOpen = (e, el) => {
@@ -35,6 +37,9 @@ class Space extends Component {
     );
     this.setState({ clickedSpaceOpened: res });
     this.setState({ sortsArr: res.sortsOnSquare });
+    this.setState({ shirota: +res.shirota });
+    this.setState({ dolgota: +res.dolgota });
+    this.setState({ spaceName: res.spaceName });
   };
 
   componentDidMount() {
@@ -61,7 +66,7 @@ class Space extends Component {
       .then((response) => {
         const arr = [...response.data];
         this.setState({ arrOfSpacesFromBack: arr });
-        console.log(arr, '------')
+        console.log(arr, '--------------------')
       })
       .catch(function (error) {
         alert("Ошибка загрузки страницы. Обратитесь к администратору");
@@ -91,7 +96,6 @@ class Space extends Component {
       if (
         this.state.sortsArr.some((name) => name.name === item.name)
       ) {
-        console.log(this.state.sortsArr.length, "<-----------");
         let res = acc + item.yieldbush;
         return res;
       } else {
@@ -112,11 +116,9 @@ class Space extends Component {
     return tons
   }
 
-  
-
-
 
   render() {
+
     return (
       <main className="space-page">
         <div className="space-container">
@@ -155,12 +157,12 @@ class Space extends Component {
             <p className="start-space">Начало использования поля - 2018 год</p>
             <p className="all-gek-space-p">Площадь поля - {this.state.clickedSpaceOpened.spaceAreaAll} {" "} гектар</p>
             <p className="all-yield-p">Всего урожая сс поля - {
-                this.allYeldFromSpace()
+                this.allYeldFromSpace().toFixed(2)
             } {" "} тонн </p>
             <p className="start-space">
               Средняя планируемая урожайность с одного метра грядки - {" "}
               {
-                this. gettingЕheAverage()
+                this. gettingЕheAverage().toFixed(3)
               }{" "}
               кг
             </p>
@@ -179,16 +181,7 @@ class Space extends Component {
               }, 0)}
               кг
             </p>
-            <ul className="space-sorts">
-              Сорта ягоды в поле:{"  "}
-              {this.state.sortsArr.map((el, index) => {
-                if (index !== this.state.sortsArr.length - 1) {
-                  return " " + el.name + ", ";
-                } else {
-                  return " " + el.name + " ";
-                }
-              })}
-            </ul>
+
           </div>
           <div className="container-space-opened-visual">
             <div className="visual-space">
@@ -207,12 +200,15 @@ class Space extends Component {
                     : "Показать расположение на карте"}
                 </button>
                 <div className="map-container">
-                  {this.state.showMap? 
-                  <YMaps >
+                  {
+                  this.state.showMap? 
+                  
+                  <YMaps dolgota={this.state.dolgota} shirota={this.state.shirota}>
                     <Map
                     instanceRef    
                       defaultState={{
-                        center: [55.57, 37.71],
+                        
+                        center: [this.state.shirota, this.state.dolgota],
                         zoom: 10,
                         type: this.state.typeOfMap,
                       }}
@@ -227,11 +223,10 @@ class Space extends Component {
                       <GeoObject
                         geometry={{
                           type: "Point",
-                          coordinates: [55.57836893130973, 37.719111442565925],
+                          coordinates: [this.state.shirota, this.state.dolgota],
                         }}
                         properties={{
-                          iconContent: "Я тащусь",
-                          hintContent: "Ну давай уже тащи",
+                          iconContent: this.state.spaceName,
                         }}
                         options={{
                           preset: "islands#blackStretchyIcon",
